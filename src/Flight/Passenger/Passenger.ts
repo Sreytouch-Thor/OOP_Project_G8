@@ -1,12 +1,16 @@
-import { FrequentFlyer } from "./FrequentFlyer";
+import { Trip } from "../Trip/Trip";
 
 
 export class Passenger {
     private name: string;
-    private creditCard: string;
-    private frequentFlyer: FrequentFlyer;
+    private gender:string
+    private trip: Trip;
     constructor(
         name: string, 
-        creditCard: string
-    ) {}
+        gender:string
+    ) 
+    {
+        this.name= name
+        this.gender = gender
+    }
 }

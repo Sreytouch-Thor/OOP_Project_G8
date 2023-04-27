@@ -10,7 +10,8 @@ export class Pilot extends Employee {
         time: string,
         date: string,
         name: string
-    ){
+    )
+    {
         super(name);
         this.time = time;
         this.date = date;

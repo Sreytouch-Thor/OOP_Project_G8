@@ -3,7 +3,10 @@ export class Layout{
     private row:string
     private coloumn:string
     private seat:Seat
-    constructor(row:string,column:string){
+    constructor(
+        row:string,column:string
+    )
+    {
         this.row = row
         this.coloumn = column
     }

@@ -10,7 +10,8 @@ export class Attendant extends Employee {
         name : string,
         time : string,
         date : string
-    ){
+    )
+    {
         super(name);
         this.time = time;
         this.date = date;
