@@ -1,9 +1,9 @@
  
 
 export enum Meal {
-    Vegetarian = 'vegetarian',
-    Vegan ='vegan',
-    DairyFree = 'dairy-free',
-    Halal= 'halal',
-    Kosher= 'kosher'
+    Vegetarian ,
+    Vegan ,
+    DairyFree ,
+    Halal ,
+    Kosher
 };

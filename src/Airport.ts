@@ -1,13 +1,13 @@
 
 export class Airport {
-    private departurArea:string
-    private CheckIn:string
-    private SeatNumber:number
-    constructor(departurArea:string,CheckIn:string,SeatNumber:number)
+    private departurArea:string;
+    private name :string;
+    private logcation:string;
+    constructor(departurArea:string,name:string,location:string)
     {
-        this.departurArea= departurArea
-        this.CheckIn= CheckIn
-        this.SeatNumber = SeatNumber
+        this.departurArea= departurArea;
+        this.name= name;
+        this.logcation = location;
     }
 
 }
