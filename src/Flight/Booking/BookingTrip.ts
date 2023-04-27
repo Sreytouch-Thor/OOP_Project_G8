@@ -1,6 +1,8 @@
 import { DateTime } from "../Date/DateTime"
-export class Trip {
+import { Booking } from "./Booking"
+export class BookingTrip {
     private name:string
+    private booking:Booking;
     private flightNumber:string
     private date:DateTime
     constructor(
