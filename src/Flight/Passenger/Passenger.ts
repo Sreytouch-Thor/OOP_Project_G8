@@ -1,10 +1,10 @@
-import { Trip } from "../Trip/Trip";
+import { FrequentFlyer } from "./FrequentFlyer";
 
 
 export class Passenger {
     private name: string;
     private gender:string
-    private trip: Trip;
+    private frequentFlyer: FrequentFlyer;
     constructor(
         name: string, 
         gender:string
