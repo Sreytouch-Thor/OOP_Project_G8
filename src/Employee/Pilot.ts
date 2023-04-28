@@ -9,11 +9,14 @@ export class Pilot extends Employee {
     constructor(
         time: string,
         date: string,
-        name: string
+        name: string,
+        gender: string,
+        salary: number
     )
     {
-        super(name);
+        super(name,gender,salary);
         this.time = time;
         this.date = date;
     };
+    
 }
