@@ -10,7 +10,7 @@ import { Layout } from "./Aeroplan/Seat/LayoutSeat";
 import { Seat } from "./Aeroplan/Seat/Seat";
 import { SeatType } from "./Aeroplan/Seat/SeatType";
 import { Baggage } from "./Flight/Baggage/Baggage";
-import { Ticket } from "./Flight/Ticket.ts/Ticket";
+import { Pilot } from "./Employee/Pilot";
 import { Meals } from "./Flight/Meal/Meal";
 
 let date = new DateTime (12,12,2022,3)
@@ -59,11 +59,10 @@ airPort.getAeroplans(aeroplan)
 let bag = new Baggage(1,22,33)
 aeroplan.getBag(bag)
 
-let pilot = new Pilot (3,date,"lita",234)
-pilot.getFlights(flight)
+let pilot = new Pilot (date,"lita","male",2333)
+pilot.getFlightPilot(flight)
 
 
-let ticket = new Ticket (passengers,seat,flight)
-// ticket.getTicket(ticket)
-console.log(airPort);
+
+console.log(pilot);
 

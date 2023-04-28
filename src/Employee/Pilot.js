@@ -19,15 +19,13 @@ exports.Pilot = void 0;
 var Employee_1 = require("./Employee");
 var Pilot = /** @class */ (function (_super) {
     __extends(Pilot, _super);
-    function Pilot(time, date, name) {
-        var _this = _super.call(this, name) || this;
+    function Pilot(date, name, gender, salary) {
+        var _this = _super.call(this, name, gender, salary) || this;
         _this.flight = [];
-        _this.time = time;
         _this.date = date;
         return _this;
     }
-    ;
-    Pilot.prototype.getFlights = function (flight) {
+    Pilot.prototype.getFlightPilot = function (flight) {
         this.flight.push(flight);
     };
     return Pilot;

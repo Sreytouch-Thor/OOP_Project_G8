@@ -8,13 +8,16 @@ export class Pilot extends Employee {
     private date: DateTime ;
     private flight: Flight[]=[] ;
     constructor(
-        time: string,
-        date: string,
-        name: string
+        date: DateTime,
+        name: string,
+        gender:string,
+        salary:number
     )
     {
-        super(name);
-        this.time = time;
-        this.date = date;
-    };
+        super(name,gender,salary);
+        this.date = date
+    }
+    getFlightPilot(flight:Flight){
+        this.flight.push(flight)
+    }
 }
