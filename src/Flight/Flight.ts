@@ -29,5 +29,9 @@ export class Flight{
     getLayout(layouts:Layout){
         this.layout.push(layouts)
     }
+    getMealType(meal:Meals){
+        this.meal = meal
+    }
+    
    
 }

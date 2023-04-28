@@ -1,19 +1,24 @@
 import { Flight } from "../Flight/Flight";
 import { Employee } from "./Employee";
+import { DateTime } from "../Flight/Date/DateTime";
 
 
 export class Pilot extends Employee {
-    private flight: Flight ;
-    private time: string ;
-    private date: string ;
+    private time: number ;
+    private date: DateTime ;
+    private flight: Flight[]=[] ;
     constructor(
-        time: string,
-        date: string,
-        name: string
+        time: number,
+        date: DateTime,
+        name: string,
+        salary:number
     )
     {
-        super(name);
+        super(name,salary);
         this.time = time;
         this.date = date;
     };
+    getFlights(flight:Flight){
+        this.flight.push(flight)
+    }
 }

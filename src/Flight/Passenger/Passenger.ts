@@ -15,7 +15,5 @@ export class Passenger {
     getBooking(booking:Booking){
         this.booking.push(booking)
     }
-    countPassenger(passenger:Passenger){
-        
-    }
+    
 }

@@ -20,6 +20,9 @@ var Flight = /** @class */ (function () {
     Flight.prototype.getLayout = function (layouts) {
         this.layout.push(layouts);
     };
+    Flight.prototype.getMealType = function (meal) {
+        this.meal = meal;
+    };
     return Flight;
 }());
 exports.Flight = Flight;

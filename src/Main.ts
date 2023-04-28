@@ -10,13 +10,16 @@ import { Layout } from "./Aeroplan/Seat/LayoutSeat";
 import { Seat } from "./Aeroplan/Seat/Seat";
 import { SeatType } from "./Aeroplan/Seat/SeatType";
 import { Baggage } from "./Flight/Baggage/Baggage";
-import { Ticket } from "./Flight/Ticket.ts/Ticket";
+import { Pilot } from "./Employee/Pilot";
+
 import { Meals } from "./Flight/Meal/Meal";
 
 let date = new DateTime (12,12,2022,3)
 
 
-let flight = new Flight ("AA12",date,"phnom penh","thland")
+let flight = new Flight ("AA12",date,"phnom penh","thlai")
+flight.getMealType(Meals.DairyFree)
+
 
 let bookingflight = new BookingFlight()
 bookingflight.getFlight(flight)
@@ -56,10 +59,9 @@ airPort.getAeroplans(aeroplan)
 let bag = new Baggage(1,22,33)
 aeroplan.getBag(bag)
 
+let pilot = new Pilot (3,date,"lita",234)
+pilot.getFlights(flight)
 
 
-
-let ticket = new Ticket (passengers,seat,flight)
-// ticket.getTicket(ticket)
 console.log(airPort);
 

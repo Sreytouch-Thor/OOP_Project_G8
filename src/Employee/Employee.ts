@@ -1,8 +1,10 @@
 
 export abstract class Employee {
     protected name: string;
+    protected salary:number
     constructor( 
-        name: string
+        name: string,
+        salary:number
     )
     {
         this.name = name;

@@ -6,7 +6,7 @@ var Airport = /** @class */ (function () {
         this.flight = [];
         this.aeroplan = [];
         this.name = name;
-        this.logcation = location;
+        this.location = location;
     }
     Airport.prototype.getFlight = function (flight) {
         this.flight.push(flight);

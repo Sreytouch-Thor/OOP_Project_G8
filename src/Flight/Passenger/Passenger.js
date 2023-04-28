@@ -10,8 +10,6 @@ var Passenger = /** @class */ (function () {
     Passenger.prototype.getBooking = function (booking) {
         this.booking.push(booking);
     };
-    Passenger.prototype.countPassenger = function (passenger) {
-    };
     return Passenger;
 }());
 exports.Passenger = Passenger;

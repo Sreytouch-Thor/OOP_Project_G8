@@ -3,14 +3,14 @@ import { Aeroplan } from "./Aeroplan/Aeroplan";
 
 export class Airport {
     private name :string;
-    private logcation:string;
+    private location:string;
     private flight:Flight[]=[]
     private aeroplan:Aeroplan[]=[]
     constructor(name:string,location:string)
     {
         
         this.name= name;
-        this.logcation = location;
+        this.location = location;
     }
     getFlight(flight:Flight){
         this.flight.push(flight)
