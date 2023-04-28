@@ -23,6 +23,7 @@ bookingflight.getFlight(flight)
 
 let bookingTrips = new BookingTrip("china","ff12",date,bookingflight)
 bookingTrips.getBookingFlight(bookingflight)
+console.log(bookingTrips)
 
 let booking = new Booking ()
 booking.getBookingTrip(bookingTrips)
