@@ -1,6 +1,5 @@
- 
 
-export enum Meal {
+export enum Meals {
     Vegetarian ,
     Vegan ,
     DairyFree ,

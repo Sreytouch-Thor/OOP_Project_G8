@@ -10,4 +10,7 @@ export class Seat {
         this.name = name
         this.price = price
     }
+    getSeatType(seatTypes:SeatType){
+        this.seatType = seatTypes
+    }
 }

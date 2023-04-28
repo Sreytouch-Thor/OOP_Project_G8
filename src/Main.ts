@@ -5,8 +5,17 @@ import { Booking } from "./Flight/Booking/Booking";
 import { BookingTrip } from "./Flight/Booking/BookingTrip";
 import { Passenger } from "./Flight/Passenger/Passenger";
 import { Airport } from "./Airport";
+import { Aeroplan } from "./Aeroplan/Aeroplan";
+import { Layout } from "./Aeroplan/Seat/LayoutSeat";
+import { Seat } from "./Aeroplan/Seat/Seat";
+import { SeatType } from "./Aeroplan/Seat/SeatType";
+import { Baggage } from "./Flight/Baggage/Baggage";
+import { Ticket } from "./Flight/Ticket.ts/Ticket";
+import { Meals } from "./Flight/Meal/Meal";
 
 let date = new DateTime (12,12,2022,3)
+
+
 let flight = new Flight ("AA12",date,"phnom penh","thland")
 
 let bookingflight = new BookingFlight()
@@ -18,8 +27,39 @@ bookingTrips.getBookingFlight(bookingflight)
 let booking = new Booking ()
 booking.getBookingTrip(bookingTrips)
 
-let passenger = new Passenger ("linna","female",booking)
+let passengers = new Passenger ("linna","female")
+passengers.getBooking(booking)
 
-let airPort = new Airport ("aaa","phom penh",flight)
+flight.getPassenger(passengers)
+flight.getBookingFlight(bookingflight)
+
+
+
+// let aeroplans = new Aeroplan("112w",flight)
+
+let airPort = new Airport ("aa-12","phom penh")
 airPort.getFlight(flight)
-console.log(passenger);
+
+
+let layout = new Layout ("6","3")
+
+let seat = new Seat ("lita",121)
+
+let seatType = new SeatType("business")
+layout.getSeat(seat)
+seat.getSeatType(seatType)
+flight.getLayout(layout)
+
+let aeroplan = new Aeroplan("ff-23",seat,flight)
+airPort.getAeroplans(aeroplan)
+
+let bag = new Baggage(1,22,33)
+aeroplan.getBag(bag)
+
+
+
+
+let ticket = new Ticket (passengers,seat,flight)
+// ticket.getTicket(ticket)
+console.log(airPort);
+

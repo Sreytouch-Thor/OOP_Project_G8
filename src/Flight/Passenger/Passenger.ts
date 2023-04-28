@@ -6,7 +6,7 @@ export class Passenger {
     constructor(
         name: string, 
         gender:string,
-        booking:Booking
+       
     ) 
     {
         this.name= name
@@ -14,5 +14,8 @@ export class Passenger {
     }
     getBooking(booking:Booking){
         this.booking.push(booking)
+    }
+    countPassenger(passenger:Passenger){
+        
     }
 }
