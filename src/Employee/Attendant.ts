@@ -7,12 +7,14 @@ export class Attendant extends Employee {
     private time : string;
     private date : string;
     constructor(
-        name : string,
-        time : string,
-        date : string
+        time: string,
+        date: string,
+        name: string,
+        gender: string,
+        salary: number
     )
     {
-        super(name);
+        super(name,gender,salary);
         this.time = time;
         this.date = date;
     };

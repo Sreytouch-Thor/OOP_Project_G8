@@ -4,5 +4,6 @@ export class Booking {
     getBookingTrip(bookingTrip:BookingTrip)
     {
         this.bookingTrip.push(bookingTrip)
+        console.log("bookingTrip")
     }
 }
