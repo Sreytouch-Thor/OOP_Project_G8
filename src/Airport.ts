@@ -1,6 +1,8 @@
 import { Flight } from "./Flight/Flight";
 import { Aeroplan } from "./Aeroplan/Aeroplan";
 import { FlightDate } from "./Flight/FlightDate";
+import { Gate } from "./Gate/Gate";
+import { Route } from "./Flight/Route/Route";
 
 export class Airport {
     private name :string;
@@ -8,6 +10,9 @@ export class Airport {
     private flight:Flight[]=[]
     private aeroplan:Aeroplan[]=[]
     private flightDate:FlightDate;
+    private gate:Gate[]=[];
+    private route:Route[]=[];
+
     constructor(name:string,location:string,flightDate:FlightDate)
     {
         
@@ -15,13 +20,18 @@ export class Airport {
         this.location = location;
         this.flightDate = flightDate
     }
-    getFlight(flight:Flight){
+    addFlight(flight:Flight){
         this.flight.push(flight)
     }
-    getAeroplans(aeroplan:Aeroplan){
+    addAeroplans(aeroplan:Aeroplan){
         this.aeroplan.push(aeroplan)
     }
-    
+    addGateForFlight(gate:Gate){
+        return this.gate.push(gate)
+    }
+    addRoute(route:Route){
+        this.route.push(route)
+    }
 
 }
 

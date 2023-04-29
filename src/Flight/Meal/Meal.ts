@@ -1,9 +1,9 @@
 
 export class Meals {
     public name: string
-    public servings : number;
-    constructor(name: string, servings : number){
+    public price : number;
+    constructor(name: string, price : number){
         this.name = name;
-        this.servings  = servings ;
+        this.price  = price ;
     }
 };

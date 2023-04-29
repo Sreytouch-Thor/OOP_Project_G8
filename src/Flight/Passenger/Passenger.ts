@@ -5,7 +5,7 @@ export class Passenger {
     private gender:string
     public mealPreference:string;
     private booking:Booking[]=[]
-    private meal:Meals[]= [];
+    private meals:Meals[]= [];
     constructor(
         name: string, 
         mealPreference:string
@@ -15,11 +15,10 @@ export class Passenger {
         this.name= name
         this.mealPreference = mealPreference
     }
+    addMeal(meal:Meals){
+        this.meals.push(meal)
+    }
     getBooking(booking:Booking){
         this.booking.push(booking)
     }
-    getMeals(meals:Meals){
-        this.meal.push(meals);
-    }
-    
-}
+};

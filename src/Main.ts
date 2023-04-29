@@ -23,60 +23,14 @@ import { Airline } from "./Airline/Airline";
 import { Employee } from "./Employee/Employee";
 
 
-// let date = new DateTime (12,12,2022,3)
+// seat layout
+let layout = new Layout ("6","3")
+let seat = new Seat ("lita",121)
+let seatType = new SeatType("business")
+layout.getSeat(seat)
+seat.getSeatType(seatType)
 
-
-// let flight = new Flight ("AA12",date,"phnom penh","thlai")
-// flight.getMealType(Meals.DairyFree)
-
-
-// let bookingflight = new BookingFlight()
-// bookingflight.getFlight(flight)
-
-// let bookingTrips = new BookingTrip("china","ff12",date,bookingflight)
-// bookingTrips.getBookingFlight(bookingflight)
-
-
-// let booking = new Booking ()
-// booking.getBookingTrip(bookingTrips)
-
-// let passengers = new Passenger ("linna","Vegetarian")
-// passengers.getBooking(booking)
-// let passengers = new Passenger ("linna","female")
-// passengers.getBooking(booking)
-
-// flight.getPassenger(passengers)
-// flight.getBookingFlight(bookingflight)
-
-
-// let airPort = new Airport ("aa-12","phom penh")
-// airPort.getFlight(flight)
-
-
-// let layout = new Layout ("6","3")
-
-// let seat = new Seat ("lita",121)
-
-// let seatType = new SeatType("business")
-// layout.getSeat(seat)
-// seat.getSeatType(seatType)
-// flight.getLayout(layout)
-
-// let aeroplan = new Aeroplan("ff-23",seat,flight)
-// airPort.getAeroplans(aeroplan)
-
-// let bag = new Baggage(1,22,33)
-// aeroplan.getBag(bag)
-
-// let pilot = new Pilot (date,"lita","male")
-// pilot.getFlightPilot(flight)
-// // pilot.setSalary(1000)
-
-// let gate = new Gate ("yy-12")
-// flight.getGate(gate)
-
-// console.log(airPort);
-
+// Datetime
 let Date1 = new DateTime (12,12,2023,12)
 let arriveDate1 = new DateTime (14,12,2023,12)
 
@@ -84,7 +38,50 @@ let Date2 = new DateTime (23,12,2023,10)
 let arriveDate2 = new DateTime (14,12,2023,7)
 
 let flight1 = new Flight("ABC123", Date1, arriveDate1);
+flight1.addLayout(layout)
+
+
+// gate  flight
+let gate1 = new Gate("A11")
+flight1.addGate(gate1)
+
+
+
+let bookingflight = new BookingFlight();
+
+bookingflight.getFlight(flight1)
+let bookingTrips = new BookingTrip("china","ff12",Date1,bookingflight)
+bookingTrips.getBookingFlight(bookingflight)
+
+let booking = new Booking ()
+booking.getBookingTrip(bookingTrips)
+
+// get passenger
+let passengers = new Passenger ("linna","female")
+passengers.getBooking(booking)
+flight1.addPassenger(passengers)
+flight1.addBookingFlight(bookingflight)
+
+console.log(passengers);
+flight1.addLayout(layout)
+// get  aeroplan 
+let aeroplan = new Aeroplan("ff-23",seat,flight1)
+let bag = new Baggage(1,22,33)
+aeroplan.getBag(bag)
+
+let flightDates = new FlightDate(flight1)
+let airport = new Airport("AA12","Phom penh",flightDates)
+airport.addAeroplans(aeroplan)
+airport.addFlight(flight1)
+airport.addGateForFlight(gate1)
+
+
+
+
+
 let flight2 = new Flight("DEF456", Date2, arriveDate2);
+let gate2 = new Gate("A13")
+flight2.addGate(gate2)
 
 let flights = [flight1, flight2];
 
@@ -118,29 +115,17 @@ let totalSalary = airline.getTotalSalary();
 
 
 
+//get Meals
+let meal1 = new Meals("Vegetarian", 2);
+let meal2 = new Meals("Kosher", 2);
+let meal3 = new Meals("Halal", 1);
+let meal4 =  new Meals("Vegan", 1);
+passengers.addMeal(meal1)
+passengers.addMeal(meal2)
+passengers.addMeal(meal3)
 
-// console.log(seat);
-
-// Example usage:
-  
-// let  meals: Meals[] = [
-//     new Meals("Vegetarian", 2),
-//     new Meals("Kosher", 2),
-//     new Meals("Halal", 1),
-//     new Meals("Vegan", 1)
-// ];
-
-// let mealCounts = flight.getMealCounts(flight,meals);
-// console.log(mealCounts)
-  
-// let mealCounts = getMealCounts(flight, meals);
-  
-//   Print the meal counts
-// for (const meal in mealCounts) {
-//     console.log(meal);
-// }
+flight1.getMeal()
+console.log(flight1)
 
 
-// flight.getSalaryManager();
-// console.log(flight)
-// console.log("Salary Manager is "+ flight.attendants + flight.);
+
