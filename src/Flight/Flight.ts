@@ -17,6 +17,8 @@ export class Flight{
     private meals:Meals[]=[];
     private layout:Layout[]=[]
     private gate:Gate
+    private pilots:Pilot[]=[];
+    private attendants:Attendant[]=[];
     constructor(flightNumber:string,departureDate:DateTime,arriveDate:DateTime)
     {
         this.flightNumber = flightNumber
@@ -36,6 +38,29 @@ export class Flight{
     // getMealType(meal:Meals){
     //     this.meal = meal
     // }
+    addPilot(pilot:Pilot){
+        this.pilots.push(pilot)
+    }
+    addAttendant(attendant:Attendant){
+        this.attendants.push(attendant)
+    }
+    getSalaryPilot(){
+        let salaryOfPilots:number =0;
+        for(let pilot of this.pilots) {
+            salaryOfPilots+= (pilot["salary"]);
+        }
+        return salaryOfPilots;
+    }
+    getSalaryAttendant(){
+        let salarylistAttendant: number= 0;
+        for(let listAttendant of this.attendants) {
+            salarylistAttendant += (listAttendant["salary"]);
+        }
+        return salarylistAttendant;
+    }
+    getSalaryManager():number{
+        return  this.getSalaryPilot() + this.getSalaryAttendant();
+    }
     
     
     public  getDepartureDate():DateTime {

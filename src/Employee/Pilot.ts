@@ -5,14 +5,18 @@ import { DateTime } from "../Flight/Date/DateTime";
 
  export class Pilot extends Employee {
     private availableDates: DateTime;
-
+    protected salary: number;
     constructor(name: string, availableDates: DateTime,salary:number) {
+        
         super(name,salary);
         this.availableDates = availableDates;
+        this.salary = salary;
     }
-    getPilotSalary():number {
-        return this.salary;
-    }
+    // getSalary():number {
+    //     return this.salary;
+    // }
+
+
 
 
     canJoinFlight(flight: Flight): boolean {

@@ -1,4 +1,6 @@
 
+import { Pilot } from "./Pilot";
+
 export abstract class Employee {
     protected name: string;
     protected gender:string
@@ -14,22 +16,11 @@ export abstract class Employee {
         this.salary = salary;
         
     };
-    setName( name: string ){
-        this.name = name;
-    }
-    getName(){
-        return this.name;
-
-    }
-
-    setSalary(salary: number) {
-        this.salary = salary;
-    }
-    
-    getSalary():number {
+    getSalary(): number{
         return this.salary;
     }
 
+   
 
     
 }

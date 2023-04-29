@@ -87,29 +87,35 @@ let flight1 = new Flight("ABC123", Date1, arriveDate1);
 let flight2 = new Flight("DEF456", Date2, arriveDate2);
 
 let flights = [flight1, flight2];
+
+// find all salary in Employee 
 let pilot1 = new Pilot("nita",Date1,1000);
 let pilot2 = new Pilot("jita",Date1,1000);
-// console.log(pilot1.canJoinFlight(flight1));
+let attendent1 = new Attendant("sreytouch",Date1,1000);
+let attendent2 = new Attendant("linna",Date1,1000);
+
+flight1.addPilot(pilot1)
+flight1.addPilot(pilot2)
+flight1.addAttendant(attendent1)
+flight1.addAttendant(attendent2)
 
 
+
+console.log("The salary all my employees : "+ flight1.getSalaryManager())
+
+
+//
 let flightDate = new FlightDate(flight1)
 
 let airline = new Airline("phnom penh Airline",flightDate);
 airline.addPilot(pilot1);
 airline.addPilot(pilot2);
 
+airline.addAttendent(attendent1);
+airline.addAttendent(attendent2);
+
 let totalSalary = airline.getTotalSalary();
-console.log(airline);
 
-// console.log(airline);
-
-let attendants = new Attendant("sreytouch",1000)
-let pilot = new Pilot ("lita",arriveDate1,1000)
-attendants.setSalary(7000)
-pilot.setSalary(1000)
-console.log(pilot.getPilotSalary());
-console.log(attendants.getAttendantsSalary())
-console.log(attendants)
 
 
 
