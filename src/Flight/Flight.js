@@ -23,6 +23,9 @@ var Flight = /** @class */ (function () {
     Flight.prototype.getMealType = function (meal) {
         this.meal = meal;
     };
+    Flight.prototype.getGate = function (gate) {
+        this.gate = gate;
+    };
     return Flight;
 }());
 exports.Flight = Flight;

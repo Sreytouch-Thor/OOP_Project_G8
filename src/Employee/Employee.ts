@@ -6,12 +6,13 @@ export abstract class Employee {
     constructor( 
         name: string,
         gender:string,
-        salary:number
+        
     )
     {
-        this.name = name;
-        this.gender = gender;
-        this.salary = salary;
+        this.name = name
+       
+        this.gender = gender
+        
     };
     setName( name: string ){
         this.name = name;
@@ -27,7 +28,6 @@ export abstract class Employee {
         return this.gender;
 
     }
-
     setSalary(salary: number) {
         this.salary = salary;
     }

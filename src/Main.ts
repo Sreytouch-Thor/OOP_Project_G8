@@ -12,6 +12,8 @@ import { SeatType } from "./Aeroplan/Seat/SeatType";
 import { Baggage } from "./Flight/Baggage/Baggage";
 import { Pilot } from "./Employee/Pilot";
 import { Meals } from "./Flight/Meal/Meal";
+import { Gate } from "./Gate/Gate";
+
 
 let date = new DateTime (12,12,2022,3)
 
@@ -25,7 +27,7 @@ bookingflight.getFlight(flight)
 
 let bookingTrips = new BookingTrip("china","ff12",date,bookingflight)
 bookingTrips.getBookingFlight(bookingflight)
-console.log(bookingTrips)
+
 
 let booking = new Booking ()
 booking.getBookingTrip(bookingTrips)
@@ -36,9 +38,6 @@ passengers.getBooking(booking)
 flight.getPassenger(passengers)
 flight.getBookingFlight(bookingflight)
 
-
-
-// let aeroplans = new Aeroplan("112w",flight)
 
 let airPort = new Airport ("aa-12","phom penh")
 airPort.getFlight(flight)
@@ -59,10 +58,12 @@ airPort.getAeroplans(aeroplan)
 let bag = new Baggage(1,22,33)
 aeroplan.getBag(bag)
 
-let pilot = new Pilot (date,"lita","male",2333)
+let pilot = new Pilot (date,"lita","male")
 pilot.getFlightPilot(flight)
+// pilot.setSalary(1000)
 
+let gate = new Gate ("yy-12")
+flight.getGate(gate)
 
-
-console.log(pilot);
+console.log(seat);
 

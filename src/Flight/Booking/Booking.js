@@ -7,7 +7,6 @@ var Booking = /** @class */ (function () {
     }
     Booking.prototype.getBookingTrip = function (bookingTrip) {
         this.bookingTrip.push(bookingTrip);
-        console.log("bookingTrip");
     };
     return Booking;
 }());
