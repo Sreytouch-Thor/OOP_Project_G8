@@ -45,4 +45,4 @@ pilot.getFlightPilot(flight);
 // pilot.setSalary(1000)
 var gate = new Gate_1.Gate("yy-12");
 flight.getGate(gate);
-console.log(seat);
+console.log(airPort);

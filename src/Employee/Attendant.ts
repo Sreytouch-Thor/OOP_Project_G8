@@ -1,7 +1,6 @@
 import { Employee } from "./Employee";
 import { Flight } from "../Flight/Flight";
 
-
 export class Attendant extends Employee {
     private flight :Flight;
     private time : string;

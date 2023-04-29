@@ -65,5 +65,5 @@ pilot.getFlightPilot(flight)
 let gate = new Gate ("yy-12")
 flight.getGate(gate)
 
-console.log(seat);
+console.log(airPort);
 
