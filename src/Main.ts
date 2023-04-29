@@ -13,13 +13,25 @@ import { Baggage } from "./Flight/Baggage/Baggage";
 import { Pilot } from "./Employee/Pilot";
 import { Meals } from "./Flight/Meal/Meal";
 import { Gate } from "./Gate/Gate";
+import { Attendant } from "./Employee/Attendant";
 
 
-let date = new DateTime (12,12,2022,3)
+let date = new DateTime ("Monday","09",2023,"3");
 
 
-let flight = new Flight ("AA12",date,"phnom penh","thlai")
-flight.getMealType(Meals.DairyFree)
+let flight:Flight = new Flight(
+    "BA123",
+    date,
+    "London",
+    "New York",
+    [
+      new Passenger("Sreytouch","female", "Vegetarian"),
+      new Passenger("linna","female", "Vegan"),
+      new Passenger("Pheap","female", "DairyFree"),
+      new Passenger("Navy","female", "Halal"),
+      new Passenger("Soki","female", "Kosher")
+    ]
+);
 
 
 let bookingflight = new BookingFlight()
@@ -32,7 +44,7 @@ bookingTrips.getBookingFlight(bookingflight)
 let booking = new Booking ()
 booking.getBookingTrip(bookingTrips)
 
-let passengers = new Passenger ("linna","female")
+let passengers = new Passenger ("linna","female","Vegetarian")
 passengers.getBooking(booking)
 
 flight.getPassenger(passengers)
@@ -58,12 +70,40 @@ airPort.getAeroplans(aeroplan)
 let bag = new Baggage(1,22,33)
 aeroplan.getBag(bag)
 
-let pilot = new Pilot (date,"lita","male")
-pilot.getFlightPilot(flight)
-// pilot.setSalary(1000)
+let attendants = new Attendant("sreytouch","female",1000)
+let pilot = new Pilot ("lita","male",1000)
+attendants.setSalary(7000)
+pilot.setSalary(1000)
+console.log(pilot.getPilotSalary());
+console.log(attendants.getAttendantsSalary())
+console.log(attendants)
+
 
 let gate = new Gate ("yy-12")
 flight.getGate(gate)
 
-console.log(seat);
+// console.log(seat);
 
+// Example usage:
+  
+// let  meals: Meals[] = [
+//     new Meals("Vegetarian", 2),
+//     new Meals("Kosher", 2),
+//     new Meals("Halal", 1),
+//     new Meals("Vegan", 1)
+// ];
+
+// let mealCounts = flight.getMealCounts(flight,meals);
+// console.log(mealCounts)
+  
+// let mealCounts = getMealCounts(flight, meals);
+  
+//   Print the meal counts
+// for (const meal in mealCounts) {
+//     console.log(meal);
+// }
+
+
+// flight.getSalaryManager();
+// console.log(flight)
+// console.log("Salary Manager is "+ flight.attendants + flight.);

@@ -34,9 +34,11 @@ export abstract class Employee {
         this.salary = salary;
     }
     
-    getSalary() {
+    getSalary():number {
         return this.salary;
     }
+    
+
 
     
 }

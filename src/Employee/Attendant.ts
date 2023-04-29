@@ -14,4 +14,7 @@ export class Attendant extends Employee {
     {
         super(name,gender,salary);
     };
+    getAttendantsSalary():number{
+        return this.salary;
+    }
 }
