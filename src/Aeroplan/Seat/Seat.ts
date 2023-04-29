@@ -13,4 +13,5 @@ export class Seat {
     getSeatType(seatTypes:SeatType){
         this.seatType = seatTypes
     }
+    
 }

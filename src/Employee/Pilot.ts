@@ -4,7 +4,6 @@ import { DateTime } from "../Flight/Date/DateTime";
 
 
 export class Pilot extends Employee {
-    private time: number ;
     private date: DateTime ;
     private flight: Flight[]=[] ;
     constructor(

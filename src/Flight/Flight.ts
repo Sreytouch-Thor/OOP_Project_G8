@@ -3,6 +3,7 @@ import { DateTime } from "./Date/DateTime"
 import { Passenger } from "./Passenger/Passenger"
 import { Meals } from "./Meal/Meal"
 import { Layout } from "../Aeroplan/Seat/LayoutSeat"
+import { Gate } from "../Gate/Gate"
 
 export class Flight{
     private flightNumber:string
@@ -13,6 +14,7 @@ export class Flight{
     private bookingFlight:BookingFlight[]=[]
     private layout:Layout[]=[]
     protected meal:Meals
+    private gate:Gate
     constructor(flightNumber:string,date:DateTime,depaartureFrom:string,arriveTO:string)
     {
         this.flightNumber = flightNumber
@@ -31,6 +33,9 @@ export class Flight{
     }
     getMealType(meal:Meals){
         this.meal = meal
+    }
+    getGate(gate:Gate){
+        this.gate = gate
     }
     
    
