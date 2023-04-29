@@ -1,13 +1,14 @@
 export class DateTime {
-      public day: string
-      public month: string
+    
+      public day: number
+      public month: number
       public year: number
-      public time: string
+      public time: number
     constructor(
-    day: string,
-    month: string,
+    day: number,
+    month: number,
     year: number,
-    time: string
+    time: number
     ) 
     {
         this.day = day

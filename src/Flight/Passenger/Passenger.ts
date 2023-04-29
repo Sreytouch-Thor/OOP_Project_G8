@@ -8,13 +8,11 @@ export class Passenger {
     private meal:Meals[]= [];
     constructor(
         name: string, 
-        gender:string,
         mealPreference:string
        
     ) 
     {
         this.name= name
-        this.gender = gender
         this.mealPreference = mealPreference
     }
     getBooking(booking:Booking){
