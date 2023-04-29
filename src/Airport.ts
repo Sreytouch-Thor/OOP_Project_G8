@@ -1,16 +1,19 @@
 import { Flight } from "./Flight/Flight";
 import { Aeroplan } from "./Aeroplan/Aeroplan";
+import { FlightDate } from "./Flight/FlightDate";
 
 export class Airport {
     private name :string;
     private location:string;
     private flight:Flight[]=[]
     private aeroplan:Aeroplan[]=[]
-    constructor(name:string,location:string)
+    private flightDate:FlightDate;
+    constructor(name:string,location:string,flightDate:FlightDate)
     {
         
         this.name= name;
         this.location = location;
+        this.flightDate = flightDate
     }
     getFlight(flight:Flight){
         this.flight.push(flight)
@@ -21,3 +24,12 @@ export class Airport {
     
 
 }
+
+
+
+
+
+
+
+
+    

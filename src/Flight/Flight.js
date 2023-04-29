@@ -2,29 +2,31 @@
 exports.__esModule = true;
 exports.Flight = void 0;
 var Flight = /** @class */ (function () {
-    function Flight(flightNumber, date, depaartureFrom, arriveTO) {
+    function Flight(flightNumber, departureDate, arriveDate) {
         this.passenger = [];
         this.bookingFlight = [];
         this.layout = [];
         this.flightNumber = flightNumber;
-        this.date = date;
-        this.departureFrom = depaartureFrom;
-        this.arriveTO = arriveTO;
+        this.departureDate = departureDate;
+        this.arriveDate = arriveDate;
     }
-    Flight.prototype.getPassenger = function (passenger) {
-        this.passenger.push(passenger);
-    };
-    Flight.prototype.getBookingFlight = function (bookingFlight) {
-        this.bookingFlight.push(bookingFlight);
-    };
-    Flight.prototype.getLayout = function (layouts) {
-        this.layout.push(layouts);
-    };
-    Flight.prototype.getMealType = function (meal) {
-        this.meal = meal;
+    // getPassenger(passenger:Passenger){
+    //     this.passenger.push(passenger)
+    // }
+    // getBookingFlight(bookingFlight:BookingFlight){
+    //     this.bookingFlight.push(bookingFlight)
+    // }
+    // getLayout(layouts:Layout){
+    //     this.layout.push(layouts)
+    // }
+    // getMealType(meal:Meals){
+    //     this.meal = meal
+    // }
+    Flight.prototype.getDepartureDate = function () {
+        return this.departureDate;
     };
     Flight.prototype.getGate = function (gate) {
-        this.gate = gate;
+        return this.gate = gate;
     };
     return Flight;
 }());

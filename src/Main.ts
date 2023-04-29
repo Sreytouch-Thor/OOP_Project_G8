@@ -13,57 +13,89 @@ import { Baggage } from "./Flight/Baggage/Baggage";
 import { Pilot } from "./Employee/Pilot";
 import { Meals } from "./Flight/Meal/Meal";
 import { Gate } from "./Gate/Gate";
+import { FlightDate } from "./Flight/FlightDate";
+import { Airline } from "./Airline/Airline";
+import { Employee } from "./Employee/Employee";
 
 
-let date = new DateTime (12,12,2022,3)
+// let date = new DateTime (12,12,2022,3)
 
 
-let flight = new Flight ("AA12",date,"phnom penh","thlai")
-flight.getMealType(Meals.DairyFree)
+// let flight = new Flight ("AA12",date,"phnom penh","thlai")
+// flight.getMealType(Meals.DairyFree)
 
 
-let bookingflight = new BookingFlight()
-bookingflight.getFlight(flight)
+// let bookingflight = new BookingFlight()
+// bookingflight.getFlight(flight)
 
-let bookingTrips = new BookingTrip("china","ff12",date,bookingflight)
-bookingTrips.getBookingFlight(bookingflight)
-
-
-let booking = new Booking ()
-booking.getBookingTrip(bookingTrips)
-
-let passengers = new Passenger ("linna","female")
-passengers.getBooking(booking)
-
-flight.getPassenger(passengers)
-flight.getBookingFlight(bookingflight)
+// let bookingTrips = new BookingTrip("china","ff12",date,bookingflight)
+// bookingTrips.getBookingFlight(bookingflight)
 
 
-let airPort = new Airport ("aa-12","phom penh")
-airPort.getFlight(flight)
+// let booking = new Booking ()
+// booking.getBookingTrip(bookingTrips)
+
+// let passengers = new Passenger ("linna","female")
+// passengers.getBooking(booking)
+
+// flight.getPassenger(passengers)
+// flight.getBookingFlight(bookingflight)
 
 
-let layout = new Layout ("6","3")
+// let airPort = new Airport ("aa-12","phom penh")
+// airPort.getFlight(flight)
 
-let seat = new Seat ("lita",121)
 
-let seatType = new SeatType("business")
-layout.getSeat(seat)
-seat.getSeatType(seatType)
-flight.getLayout(layout)
+// let layout = new Layout ("6","3")
 
-let aeroplan = new Aeroplan("ff-23",seat,flight)
-airPort.getAeroplans(aeroplan)
+// let seat = new Seat ("lita",121)
 
-let bag = new Baggage(1,22,33)
-aeroplan.getBag(bag)
+// let seatType = new SeatType("business")
+// layout.getSeat(seat)
+// seat.getSeatType(seatType)
+// flight.getLayout(layout)
 
-let pilot = new Pilot (date,"lita","male")
-pilot.getFlightPilot(flight)
-// pilot.setSalary(1000)
+// let aeroplan = new Aeroplan("ff-23",seat,flight)
+// airPort.getAeroplans(aeroplan)
 
-let gate = new Gate ("yy-12")
-flight.getGate(gate)
+// let bag = new Baggage(1,22,33)
+// aeroplan.getBag(bag)
 
-console.log(airPort);
+// let pilot = new Pilot (date,"lita","male")
+// pilot.getFlightPilot(flight)
+// // pilot.setSalary(1000)
+
+// let gate = new Gate ("yy-12")
+// flight.getGate(gate)
+
+// console.log(airPort);
+
+let Date1 = new DateTime (12,12,2023,12)
+let arriveDate1 = new DateTime (14,12,2023,12)
+
+let Date2 = new DateTime (23,12,2023,10)
+let arriveDate2 = new DateTime (14,12,2023,7)
+
+let flight1 = new Flight("ABC123", Date1, arriveDate1);
+let flight2 = new Flight("DEF456", Date2, arriveDate2);
+
+let flights = [flight1, flight2];
+let pilot1 = new Pilot("nita",Date1,1000);
+let pilot2 = new Pilot("jita",Date1,1000);
+// console.log(pilot1.canJoinFlight(flight1));
+
+
+let flightDate = new FlightDate(flight1)
+
+let airline = new Airline("phnom penh Airline",flightDate);
+airline.addPilot(pilot1);
+airline.addPilot(pilot2);
+
+let totalSalary = airline.getTotalSalary();
+console.log(airline);
+
+// console.log(airline);
+
+
+
 

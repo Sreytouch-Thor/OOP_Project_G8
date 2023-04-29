@@ -7,10 +7,9 @@ export class Attendant extends Employee {
     private date : DateTime;
     constructor(
         name: string,
-        gender: string,
         salary: number
     )
     {
-        super(name,gender,salary);
+        super(name,salary);
     };
 }
