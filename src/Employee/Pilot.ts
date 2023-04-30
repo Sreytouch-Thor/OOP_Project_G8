@@ -6,6 +6,7 @@ import { DateTime } from "../Flight/Date/DateTime";
  export class Pilot extends Employee {
     private availableDates: DateTime;
     protected salary: number;
+    private flights:Flight[]=[]
     constructor(name: string, availableDates: DateTime,salary:number) {
         
         super(name,salary);
@@ -16,16 +17,19 @@ import { DateTime } from "../Flight/Date/DateTime";
     //     return this.salary;
     // }
 
-
-
-
-    canJoinFlight(flight: Flight): boolean {
+    canJoinFlight(flights: Flight):boolean{
+        let availableDates = []
         for (let date of this.availableDates as unknown as DateTime[]) {
-            if (date === flight.getDepartureDate()) {
-                return true;
+            if (date === flights['departureDate']) {
+                availableDates.push(flights)    
+                return true; 
             }
         }
         return false;
     }
+    
+
+    
 
 }
+

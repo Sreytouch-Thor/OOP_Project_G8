@@ -9,15 +9,9 @@ export class FlightDate{
     getflight(flight:Flight){
         this.flights.push(flight)
     }
-    public getFlightsOnDate(date: DateTime) {
-        let flightsOnDate: Flight[] = [];
-        for (let flight of this.flights) {
-            if (flight.getDepartureDate().isEqual(date)) {
-                flightsOnDate.push(flight);
-            }
-        }
-        return flightsOnDate;
-    }
+    
+    
+
 
     
     

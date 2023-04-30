@@ -87,8 +87,8 @@ export class Flight{
     public  getDepartureDate():DateTime {
         return this.departureDate;
     }
-    addGate(gate:Gate){
-        return this.gate;
+    getGateToFlight(gate:Gate){
+        return this.gate = gate;
     }
 
     

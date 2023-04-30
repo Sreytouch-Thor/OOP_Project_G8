@@ -14,10 +14,6 @@ import { Pilot } from "./Employee/Pilot";
 import { Meals } from "./Flight/Meal/Meal";
 import { Gate } from "./Gate/Gate";
 import { Attendant } from "./Employee/Attendant";
-
-
-
-
 import { FlightDate } from "./Flight/FlightDate";
 import { Airline } from "./Airline/Airline";
 import { Employee } from "./Employee/Employee";
@@ -25,27 +21,35 @@ import { Employee } from "./Employee/Employee";
 
 // seat layout
 let layout = new Layout ("6","3")
+// seat
 let seat = new Seat ("lita",121)
+// seatType
 let seatType = new SeatType("business")
 layout.getSeat(seat)
 seat.getSeatType(seatType)
 
-// Datetime
+// Datetime for flight
 let Date1 = new DateTime (12,12,2023,12)
 let arriveDate1 = new DateTime (14,12,2023,12)
 
 let Date2 = new DateTime (23,12,2023,10)
 let arriveDate2 = new DateTime (14,12,2023,7)
 
+// As an airline pilot, I want to know, for a given date, how many flights I have to join
+// flight 1 
 let flight1 = new Flight("ABC123", Date1, arriveDate1);
 flight1.addLayout(layout)
-
-
 // gate  flight
 let gate1 = new Gate("A11")
-flight1.addGate(gate1)
+flight1.getGateToFlight(gate1)
+// flight 2
+let flight2 = new Flight("DEF456", Date2, arriveDate2);
 
-
+let gate2 = new Gate("A13")
+flight2.getGateToFlight(gate2)
+// get all flight 
+let flights = [flight1, flight2];
+flight1.getDepartureDate()
 
 let bookingflight = new BookingFlight();
 
@@ -56,9 +60,12 @@ bookingTrips.getBookingFlight(bookingflight)
 let booking = new Booking ()
 booking.getBookingTrip(bookingTrips)
 
-// get passenger
+// detail passenger 
 let passengers = new Passenger ("linna","female")
 passengers.getBooking(booking)
+// console.log(passengers);
+
+
 flight1.addPassenger(passengers)
 flight1.addBookingFlight(bookingflight)
 
@@ -76,17 +83,11 @@ airport.addFlight(flight1)
 airport.addGateForFlight(gate1)
 
 
-
-
-
-let flight2 = new Flight("DEF456", Date2, arriveDate2);
-let gate2 = new Gate("A13")
-flight2.addGate(gate2)
-
-let flights = [flight1, flight2];
-
 // find all salary in Employee 
 let pilot1 = new Pilot("nita",Date1,1000);
+
+console.log(pilot1.canJoinFlight(flight1));
+
 let pilot2 = new Pilot("jita",Date1,1000);
 let attendent1 = new Attendant("sreytouch",Date1,1000);
 let attendent2 = new Attendant("linna",Date1,1000);
@@ -96,23 +97,18 @@ flight1.addPilot(pilot2)
 flight1.addAttendant(attendent1)
 flight1.addAttendant(attendent2)
 
+// console.log("The salary all my employees : "+ flight1.getSalaryManager())
 
 
-console.log("The salary all my employees : "+ flight1.getSalaryManager())
-
-
-//
+// add employee to airline
 let flightDate = new FlightDate(flight1)
-
 let airline = new Airline("phnom penh Airline",flightDate);
 airline.addPilot(pilot1);
 airline.addPilot(pilot2);
 
 airline.addAttendent(attendent1);
 airline.addAttendent(attendent2);
-
-let totalSalary = airline.getTotalSalary();
-
+// let totalSalary = airline.getTotalSalary();
 
 
 //get Meals
@@ -124,8 +120,10 @@ passengers.addMeal(meal1)
 passengers.addMeal(meal2)
 passengers.addMeal(meal3)
 
+passengers.addGateForPassenger(flight1)
 flight1.getMeal()
-console.log(flight1)
+console.log(passengers);
 
+// console.log(passengers)
 
 
