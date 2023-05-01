@@ -1,6 +1,5 @@
 
 import { Pilot } from "./Pilot";
-
 export abstract class Employee {
     protected name: string;
     protected gender:string
@@ -20,7 +19,4 @@ export abstract class Employee {
         return this.salary;
     }
 
-   
-
-    
 }

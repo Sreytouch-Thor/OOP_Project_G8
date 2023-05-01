@@ -72,6 +72,12 @@ export class Flight{
              return listMeal;
          }
      }
+     addMeal(meal:Meals){
+        this.meals.push(meal)
+     }
+
+
+     
      //get Passenger comeback
 
     //  getReturnOfPassenger(){

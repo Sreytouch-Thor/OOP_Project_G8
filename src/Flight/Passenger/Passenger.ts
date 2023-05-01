@@ -11,12 +11,12 @@ export class Passenger {
     private meals:Meals[]= [];
     constructor(
         name: string, 
-        mealPreference:string
+       
        
     ) 
     {
         this.name= name
-        this.mealPreference = mealPreference
+      
     }
     addMeal(meal:Meals){
         this.meals.push(meal)
